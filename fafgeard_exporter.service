@@ -1,0 +1,13 @@
+[Unit]
+Description=fafgeard_exporter
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=node_exporter
+Group=node_exporter
+Type=simple
+ExecStart=/usr/local/bin/fafgeardexporter --web.listen-address=":1906"
+
+[Install]
+WantedBy=multi-user.target
